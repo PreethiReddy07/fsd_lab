@@ -9,7 +9,7 @@ function userAuth(userId, callback) {
     setTimeout(() => {
         console.log("User authenticated.");
         callback(null, userId); 
-    }, 1000);
+    }, 1000); 
 }
 
 function verifyPayment(callback) {
@@ -42,19 +42,19 @@ function notifyUser(userId, callback) {
 
 function processPaymentPipeline(userId) {
     userAuth(userId, (err, userId) => {
-        if (err) return console.error("Authentication failed:", err);
+        if (err) return console.log("Authentication failed ");
 
         verifyPayment((err) => {
-            if (err) return console.error("Payment verification failed:", err);
+            if (err) return console.log("Payment verification failed ");
 
             processPayment((err) => {
-                if (err) return console.error("Payment processing failed:", err);
+                if (err) return console.log("Payment processing failed ");
 
                 updatAcc((err) => {
-                    if (err) return console.error("Account update failed:", err);
+                    if (err) return console.log("Account update failed ");
 
                     notifyUser(userId, (err) => {
-                        if (err) return console.error("Notification failed:", err);
+                        if (err) return console.log("Notification failed ");
 
                         console.log("Payment process completed successfully.");
                     });
@@ -62,6 +62,6 @@ function processPaymentPipeline(userId) {
             });
         });
     });
-}
+}              
 
 processPaymentPipeline("user123");
