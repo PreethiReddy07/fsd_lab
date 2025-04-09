@@ -1,0 +1,12 @@
+[
+    {
+        "id":1,
+        "name":"xyz",
+        "dept":"CSE"
+    },
+    {
+        "id":2,
+        "name":"abc",
+        "dept":"IT"
+    }
+]

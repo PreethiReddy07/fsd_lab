@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function add(a, b) {
+            return a + b;
+        }
+
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        function divide(a, b) {
+            if (b === 0) {
+                return "Division by zero is not allowed.";
+            }
+            return a / b;
+        }
+
+        function calculator() {
+            let num1 = parseFloat(prompt("Enter the n1:"));
+            let num2 = parseFloat(prompt("Enter the n2:"));
+
+            let operation = prompt("select operation (+, -, *, /):");
+
+            let result;
+
+            switch (operation) {
+                case '+':
+                    result = add(num1, num2);
+                    break;
+                case '-':
+                    result = subtract(num1, num2);
+                    break;
+                case '*':
+                    result = multiply(num1, num2);
+                    break;
+                case '/':
+                    result = divide(num1, num2);
+                    break;
+                default:
+                    result = "Invalid operation!";
+                    break;
+            }
+
+            alert("The result is: " + result);
+        }
+
+        calculator();
+    </script>
+</body>
+
+</html>
